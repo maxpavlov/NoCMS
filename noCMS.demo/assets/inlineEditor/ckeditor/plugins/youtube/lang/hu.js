@@ -1,0 +1,21 @@
+﻿CKEDITOR.plugins.setLang('youtube', 'hu', {
+	button : 'Youtube videГі beillesztГ©se',
+	title : 'Youtube videГі beillesztГ©se',
+	txtEmbed : 'Illessze be a beГЎgyazott kГіdot',
+	txtUrl : 'Illessze be a Youtube videГі URL-jГ©t',
+	txtWidth : 'SzГ©lessГ©g',
+	txtHeight : 'MagassГЎg',
+	txtStartAt : 'KezdЕ‘ idЕ‘pont (ss vagy mm:ss vagy hh:mm:ss)',
+	chkRelated : 'AjГЎnlott videГіk megjelenГ­tГ©se, amikor a videГі befejezЕ‘dik',
+	chkPrivacy : 'Fokozott adatvГ©delmi mГіd engedГ©lyezГ©se',
+	chkOlderCode : 'RГ©gi beГЎgyazott kГіd hasznГЎlata',
+	noCode : 'A beГЎgyazott kГіd, vagy az URL megadГЎsa kГ¶telezЕ‘',
+	invalidEmbed : 'A beГЎgyazott kГіd Г©rvГ©nytelen',
+	invalidUrl : 'A megadott URL Г©rvГ©nytelen',
+	or : 'vagy',
+	noWidth : 'A szГ©lessГ©g megadГЎsa kГ¶telezЕ‘',
+	invalidWidth : 'Г‰rvГ©nyes szГ©lessГ©get adjon meg',
+	noHeight : 'A magassГЎg megadГЎsa kГ¶telezЕ‘',
+	invalidHeight : 'Г‰rvГ©nyes magassГЎgot adjon meg',
+	invalidTime : 'Г‰rvГ©nyes kezdЕ‘ idЕ‘pontot adjon meg'
+});

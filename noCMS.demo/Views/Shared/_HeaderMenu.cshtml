@@ -1,0 +1,26 @@
+﻿@model noCMS.demo.Models.HeaderMenuModel
+
+<menu id="header-menu">
+    <ul class="menu">
+        <li class="@Html.Raw(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "store" ? "selected" : "") l-en">
+            <a href="@Url.Action("Index", "Home")">Store</a>
+        </li>
+        <li class="@Html.Raw(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "content" ? "selected" : "")  l-en">
+            <a href="@Url.Action("Index", "Home")">Content</a>
+        </li>
+        <li class="@Html.Raw(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "features" ? "selected" : "")  l-en">
+            <a href="@Url.Action("Index", "Home")">Features</a>
+        </li>
+        <li class="@Html.Raw(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "about" ? "selected" : "")  l-en">
+            <a href="@Url.Action("Index", "Home")">About</a>
+        </li>
+        <li class="@Html.Raw(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "contact" ? "selected" : "")  l-en">
+            <a href="@Url.Action("Index", "Home")">Contact</a>
+        </li>
+    </ul>
+</menu>
+
+<div class="search-container">
+    <input type="text" class="form-control" id="search-text" placeholder="search...">
+    <div class="search-btn" id="start-search"></div>
+</div>

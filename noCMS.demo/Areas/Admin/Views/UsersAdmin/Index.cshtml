@@ -1,0 +1,177 @@
+﻿@using System.Web.Script.Serialization
+@using ClientDependency.Core.Mvc
+@{
+    Html.RequiresJs("users-admin.js", "ViewScripts", 11);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+
+
+@Html.Hidden("RemoveRoleUrl", Url.Action("RemoveRole", "UsersAdmin"))
+@Html.Hidden("AddRoleUrl", Url.Action("AddNewRole", "UsersAdmin"))
+@Html.Hidden("GetUsersInRoleUrl", Url.Action("GetUsersInRole", "UsersAdmin"))
+@Html.Hidden("UpdateDisplayNameUrl", Url.Action("UpdateDisplayName", "UsersAdmin"))
+@Html.Hidden("UpdatePasswordUrl", Url.Action("UpdateUserPassword", "UsersAdmin"))
+@Html.Hidden("AddNewUserUrl", Url.Action("AddNewUser", "UsersAdmin"))
+@Html.Hidden("DeleteUserUrl", Url.Action("DeleteUser", "UsersAdmin"))
+@Html.Hidden("AddUserToRolesUrl", Url.Action("AddUserToRoles", "UsersAdmin"))
+
+<div id="users-management-view">
+    @Html.Hidden("initial-users-and-roles-list", (HtmlString)initValue)
+    <div class="outlined" id="roles-list-wrapper">
+        <p class="outlined-title">Managment roles</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Role name</td>
+                    <td>User Count</td>
+                    <td>Admin features</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'role-template', foreach: Roles }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-role-block">
+        <div class="input-prepend">
+            <button class="btn add-type" type="button" data-bind="click: AddNewRole, attr: { disabled: NewRoleName() === '' }"><span>Add role</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewRoleName"/>
+        </div>
+    </pre>
+    <div class="outlined" id="user-list-wrapper">
+        <p class="outlined-title">Managment users</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Login</td>
+                    <td>Password</td>
+                    <td>User name</td>
+                    <td>Role</td>
+                    <td>FacebookId</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'user-template', foreach: UsersInRole }">
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="add-user-dialog" data-bind="dialog: addUserDialogOptions, dialogVisible: isAddUserDialogVisible" style="display: none">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="inputUserName">User name</label>
+                <div class="controls">
+                    <input type="text" id="inputUserName" placeholder="User name" data-bind="value: NewUserName">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPassword">password</label>
+                <div class="controls">
+                    <input type="password" id="inputPassword" placeholder="password" data-bind="value: NewUserPassword">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDisplayName">Display name</label>
+                <div class="controls">
+                    <input type="text" id="inputDisplayName" placeholder="Display name" data-bind="value: NewUserDisplayName">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputEmail">Email</label>
+                <div class="controls">
+                    <input type="text" id="inputEmail" placeholder="Email" data-bind="value: NewUserEmail">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="selectRoles">Roles</label>
+                <div class="controls">
+                    <select multiple="true" data-bind="options: Roles, optionsText: 'RoleName', optionsValue: 'RoleName', selectedOptions: NewUserRoles, chosen: { PlaceholderText: 'Please, select role', AddPlaceholder: true }" id="selectRoles"></select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="add-user-button">
+        <button class="btn btn-success add-user" type="button" data-bind="click: ShowAddUserDialog">
+            <i class="icon-user icon-white"></i>
+            <span>Add user</span>
+        </button>
+    </div>
+</div>
+
+<script type="text/html" id="permission-template">
+    <tr>
+        <td data-bind="text: PermissionName"></td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" style="width: 255px" data-bind="options: ParentRoles, selectedOptions: Roles, chosen: { PlaceholderText: 'Select role', AddPlaceholder: true }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: SaveNewPermissionRoles, attr: { disabled: !(PermissionRolesChanged()) }, visible: PermissionRolesChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" style="width: 500px" data-bind="foreach: AllCAs, selectedOptions: CAs, chosen: { PlaceholderText: 'Select method', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true, include_group_label_in_selected: true} }">
+                    <optgroup data-bind="attr: {label: ControllerName}, foreach: Actions">
+                        <option data-bind="text: $data, attr: { value: $parent.ControllerName + ';' + $data }"></option>
+                    </optgroup>
+                </select>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveNewPermissionCA, attr: { disabled: !(CAsChanged()) }, visible: CAsChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<script type="text/html" id="user-template">
+    <tr>
+        <td data-bind="text: UserName"></td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: EnableUpdatePassword, visible: !UpdatingPassword()">
+                <i class="icon-edit icon-white"></i>
+                <span>Reset Password</span>
+            </button>
+            <div class="input-append" data-bind="visible: UpdatingPassword">
+                <input class="span2" size="16" type="password" data-bind="value: NewPassword"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedPassword, attr: { disabled: !(NewPasswordChanged()) }"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append display-name">
+                <input class="span2" size="16" style="width: 584px" type="text" data-bind="value: DisplayName"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveDisplayName, attr: { disabled: !(DisplayNameChanged()) }, visible: DisplayNameChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" data-bind="options: ParentRoles, selectedOptions: Roles, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: false }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: SaveNewRoles, attr: { disabled: !(UserRolesChanged()) }, visible: UserRolesChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td data-bind="text: FacebookId"></td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<script type="text/html" id="role-template">
+    <tr data-bind="css: { success: Selected }, click: Select">
+        <td data-bind="text: RoleName"></td>
+        <td data-bind="text: UsersCount"></td>
+        <td>
+            <label class="checkbox">
+                <input type="checkbox" data-bind="checked: HasAnAdminFeatures"/>
+            </label>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

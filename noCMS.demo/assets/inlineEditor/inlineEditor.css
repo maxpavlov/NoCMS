@@ -1,0 +1,49 @@
+﻿.editable-wrapper {
+    min-height: 150px;
+    min-width: 200px;
+    position: relative;
+}
+
+.editable-wrapper .editable-block {
+    min-height: 150px;
+    min-width: 200px;
+    /*margin-top: 20px;*/
+}
+
+.editable-wrapper .edit-button {
+    display: none;
+    z-index: 10;
+    opacity: 1.0 !important;
+    display: block !important;
+}
+
+.editable-wrapper .save-button {
+    position: absolute;
+    display: none;
+    z-index: 10;
+    left: 0;
+    margin-top: -30px;
+}
+
+.cke_button__polyanah1_icon {
+    background: url('./ckeditor/skins/moono/icons.png') no-repeat 0 -512px!important;
+}
+
+.cke_button__polyanah2_icon {
+    background: url('./ckeditor/skins/moono/icons.png') no-repeat 0 -544px!important;
+}
+
+.cke_button__polyanap_icon {
+    background: url('./ckeditor/skins/moono/icons.png') no-repeat 0 -1568px!important;
+}
+
+.cke_editable.cke_editable_inline.cke_focus
+{
+	box-shadow: inset 0px 0px 20px 3px #ddd, inset 0 0 1px #000;
+	outline: none;
+	background: #eee;
+	cursor: text;
+}
+body.dark .cke_editable.cke_editable_inline.cke_focus {
+    background: gray
+}

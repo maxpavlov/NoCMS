@@ -1,0 +1,794 @@
+﻿header {
+
+    .header-admin-links {
+        float: right;
+        height: 20px;
+
+        a {
+            float: right;
+            display: block;
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 15px;
+            text-align: center;
+            color: #b7bfc5;
+            font-family: "Archive";
+
+            &:hover {
+                color: #7a8b9a;
+            }
+        }
+    }
+}
+
+#header-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1050px;
+    height: 50px;
+    margin-top: 15px;
+}
+
+#mobile_menu_link{
+    display:none;
+    margin-top: 20px;
+    margin-right: 20px;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border: #9ba7b3 solid 2px;
+    border-radius: 5px;
+    cursor:pointer;
+    background-image:url('../global/img/menu-mobile.png');
+}
+
+#logo {
+    font-family: "Archive";
+    font-size: 65px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: left;
+    display: block;
+    text-decoration: none;
+    margin-bottom: -20px;
+    margin-left: 20px;
+    margin-right: 1.8%;
+    margin-top: -10px;
+    margin-bottom: -20px;
+    width: 19.6%;
+    transition: all 0.3s ease;
+
+    p {
+        font-family: 'Open Sans Light';
+        float: left;
+        margin-top: -16px;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 11px;
+        text-align: justify;
+    }
+
+        p:after {
+               content: "";
+               display: inline-block;
+               width: 100%;
+            }
+
+    img {
+        
+    }
+}
+
+#header-menu {
+    width: 54%;
+    float: left;
+    margin-top: 11px;
+    transition: all 0.3s ease;
+
+    .menu {
+        position: relative;
+        margin: 0 auto;
+        font-family: "Archive";
+        display: table;
+
+        li {
+            display: block;
+            float: left;
+            height: 37px;
+            cursor: pointer;
+            margin-left: -2px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
+
+            a {
+                text-decoration: none;
+                font-size: 14px;
+                display: block;
+                text-align: center;
+                line-height: 37px;
+            }
+
+
+            &.l-en {
+                min-width: 110px;
+            }
+
+            &.l-ru {
+                min-width: 100px;
+            }
+
+            &.l-es {
+                min-width: 93px;
+            }
+
+            &.l-de {
+                min-width: 115px;
+            }
+
+            &.l-nl {
+                min-width: 115px;
+            }
+
+            &.l-pt {
+                min-width: 115px;
+            }
+
+            &.l-zh {
+                min-width: 115px;
+            }
+
+            &.l-cs {
+                min-width: 115px;
+            }
+
+            &.l-da {
+                min-width: 115px;
+            }
+
+            &.l-uk {
+                min-width: 115px;
+            }
+
+            &.l-fi {
+                min-width: 110px;
+            }
+
+            &.l-fr {
+                min-width: 95px;
+            }
+
+            &.l-el {
+                min-width: 95px;
+                a {
+                    font-size: 17px;
+                }
+            }
+
+            &.l-hi {
+                min-width: 115px;
+            }
+
+            &.l-id {
+                min-width: 110px;
+            }
+
+            &.l-he {
+                min-width: 110px;
+                a {
+                    font-size: 18px;
+                }
+            }
+
+            &.l-it {
+                min-width: 115px;
+            }
+
+            &.l-ja {
+                min-width: 115px;
+            }
+
+            &.l-nb {
+                min-width: 115px;
+            }
+
+            &.l-pl {
+                min-width: 115px;
+            }
+
+            &.l-ko {
+                min-width: 115px;
+            }
+
+            &.l-sv {
+                min-width: 110px;
+            }
+
+            &.l-th {
+                min-width: 110px;
+            }
+
+            &.l-ar {
+                min-width: 110px;
+            }
+
+            &.l-vi {
+                min-width: 110px;
+            }
+        }
+    }
+}
+
+body.light {
+
+    #logo {
+
+        p {
+            color: @darkgray1;
+        }
+    }
+
+    .menu {
+
+        li {
+            border-right: 1px solid @lightgray1;
+
+            a {
+                color: @darkgray;
+
+                &:hover {
+                    color: @lightgray1;
+                }
+            }
+
+            &:first-child {
+                border-left: 1px solid @lightgray1;
+            }
+
+            &.selected {
+                a {
+                    color: @lightgray1;
+                }
+            }
+        }
+    }
+}
+
+ 
+.search-container {
+    float: right;
+    height: 50px;
+    position: relative;
+    width: 194px;
+    min-width: 194px;
+    margin-top: 16px;
+    transition: left 0.5s; /* BYO prefixes */
+    margin-right: 20px;
+
+    input {
+        font-size: 12px;
+        height: 23px;
+        width: 115px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        background: transparent;
+        display: inline-block;
+        border: 1px solid #87888b;
+        float: left;
+        height: 25px;
+        width: 127px;
+        font-size: 13px;
+        padding: 0px 6px;
+    }
+
+    .search-btn {
+        background-image: url('img//search-btn/search-1.png');
+        height: 45px;
+        width: 54px;
+        margin-top: -12px;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 1px;
+        -webkit-animation-name: searchGetOut;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-name: searchGetOut;
+        -o-animation-name: searchGetOut;
+        animation-name: searchGetOut;
+        -moz-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        -moz-animation-timing-function: linear;
+        -o-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -o-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        margin-top: -10px;
+
+        &:hover {
+            -webkit-animation-name: searchGetIn;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-name: searchGetIn;
+            -o-animation-name: searchGetIn;
+            animation-name: searchGetIn;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            animation-duration: 1s;
+            -moz-animation-timing-function: linear;
+            -o-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -o-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes searchGetIn
+{
+0%   {background-image: url('img//search-btn/search-1.png');}
+3.22%   {background-image: url('img//search-btn/search-1.png');}
+6.44%   {background-image: url('img//search-btn/search-2.png');}
+9.66%   {background-image: url('img//search-btn/search-3.png');}
+12.88%   {background-image: url('img//search-btn/search-4.png');}
+16.1%   {background-image: url('img//search-btn/search-5.png');}
+19.32%   {background-image: url('img//search-btn/search-6.png');}
+22.54%   {background-image: url('img//search-btn/search-7.png');}
+25.76%   {background-image: url('img//search-btn/search-8.png');}
+28.98%   {background-image: url('img//search-btn/search-9.png');}
+32.2%   {background-image: url('img//search-btn/search-10.png');}
+35.42%   {background-image: url('img//search-btn/search-11.png');}
+38.64%   {background-image: url('img//search-btn/search-12.png');}
+41.86%   {background-image: url('img//search-btn/search-13.png');}
+45.08%   {background-image: url('img//search-btn/search-14.png');}
+48.30%   {background-image: url('img//search-btn/search-15.png');}
+51.52%   {background-image: url('img//search-btn/search-16.png');}
+54.74%   {background-image: url('img//search-btn/search-17.png');}
+57.96%   {background-image: url('img//search-btn/search-18.png');}
+61.18%   {background-image: url('img//search-btn/search-19.png');}
+64.4%   {background-image: url('img//search-btn/search-20.png');}
+67.62%   {background-image: url('img//search-btn/search-21.png');}
+70.84%   {background-image: url('img//search-btn/search-22.png');}
+74.06%   {background-image: url('img//search-btn/search-23.png');}
+77.28%   {background-image: url('img//search-btn/search-24.png');}
+80.5%   {background-image: url('img//search-btn/search-25.png');}
+83.72%   {background-image: url('img//search-btn/search-26.png');}
+86.94%   {background-image: url('img//search-btn/search-27.png');}
+90.16%   {background-image: url('img//search-btn/search-28.png');}
+100%   {background-image: url('img//search-btn/search-31.png');}
+}
+
+@-webkit-keyframes searchGetIn
+{
+0%   {background-image: url('img//search-btn/search-1.png');}
+6.44%   {background-image: url('img//search-btn/search-2.png');}
+9.66%   {background-image: url('img//search-btn/search-3.png');}
+12.88%   {background-image: url('img//search-btn/search-4.png');}
+16.1%   {background-image: url('img//search-btn/search-5.png');}
+19.32%   {background-image: url('img//search-btn/search-6.png');}
+22.54%   {background-image: url('img//search-btn/search-7.png');}
+25.76%   {background-image: url('img//search-btn/search-8.png');}
+28.98%   {background-image: url('img//search-btn/search-9.png');}
+32.2%   {background-image: url('img//search-btn/search-10.png');}
+35.42%   {background-image: url('img//search-btn/search-11.png');}
+38.64%   {background-image: url('img//search-btn/search-12.png');}
+41.86%   {background-image: url('img//search-btn/search-13.png');}
+45.08%   {background-image: url('img//search-btn/search-14.png');}
+48.30%   {background-image: url('img//search-btn/search-15.png');}
+51.52%   {background-image: url('img//search-btn/search-16.png');}
+54.74%   {background-image: url('img//search-btn/search-17.png');}
+57.96%   {background-image: url('img//search-btn/search-18.png');}
+61.18%   {background-image: url('img//search-btn/search-19.png');}
+64.4%   {background-image: url('img//search-btn/search-20.png');}
+67.62%   {background-image: url('img//search-btn/search-21.png');}
+70.84%   {background-image: url('img//search-btn/search-22.png');}
+74.06%   {background-image: url('img//search-btn/search-23.png');}
+77.28%   {background-image: url('img//search-btn/search-24.png');}
+80.5%   {background-image: url('img//search-btn/search-25.png');}
+83.72%   {background-image: url('img//search-btn/search-26.png');}
+86.94%   {background-image: url('img//search-btn/search-27.png');}
+90.16%   {background-image: url('img//search-btn/search-28.png');}
+100%   {background-image: url('img//search-btn/search-31.png');}
+}
+
+@-moz-keyframes searchGetIn
+{
+0%   {background-image: url('img//search-btn/search-1.png');}
+6.44%   {background-image: url('img//search-btn/search-2.png');}
+9.66%   {background-image: url('img//search-btn/search-3.png');}
+12.88%   {background-image: url('img//search-btn/search-4.png');}
+16.1%   {background-image: url('img//search-btn/search-5.png');}
+19.32%   {background-image: url('img//search-btn/search-6.png');}
+22.54%   {background-image: url('img//search-btn/search-7.png');}
+25.76%   {background-image: url('img//search-btn/search-8.png');}
+28.98%   {background-image: url('img//search-btn/search-9.png');}
+32.2%   {background-image: url('img//search-btn/search-10.png');}
+35.42%   {background-image: url('img//search-btn/search-11.png');}
+38.64%   {background-image: url('img//search-btn/search-12.png');}
+41.86%   {background-image: url('img//search-btn/search-13.png');}
+45.08%   {background-image: url('img//search-btn/search-14.png');}
+48.30%   {background-image: url('img//search-btn/search-15.png');}
+51.52%   {background-image: url('img//search-btn/search-16.png');}
+54.74%   {background-image: url('img//search-btn/search-17.png');}
+57.96%   {background-image: url('img//search-btn/search-18.png');}
+61.18%   {background-image: url('img//search-btn/search-19.png');}
+64.4%   {background-image: url('img//search-btn/search-20.png');}
+67.62%   {background-image: url('img//search-btn/search-21.png');}
+70.84%   {background-image: url('img//search-btn/search-22.png');}
+74.06%   {background-image: url('img//search-btn/search-23.png');}
+77.28%   {background-image: url('img//search-btn/search-24.png');}
+80.5%   {background-image: url('img//search-btn/search-25.png');}
+83.72%   {background-image: url('img//search-btn/search-26.png');}
+86.94%   {background-image: url('img//search-btn/search-27.png');}
+90.16%   {background-image: url('img//search-btn/search-28.png');}
+100%   {background-image: url('img//search-btn/search-31.png');}
+}
+
+@keyframes searchGetOut
+{
+0%   {background-image: url('img//search-btn/search-31.png');}
+3.22%   {background-image: url('img//search-btn/search-28.png');}
+6.44%   {background-image: url('img//search-btn/search-27.png');}
+9.66%   {background-image: url('img//search-btn/search-26.png');}
+12.88%   {background-image: url('img//search-btn/search-25.png');}
+16.1%   {background-image: url('img//search-btn/search-24.png');}
+19.32%   {background-image: url('img//search-btn/search-23.png');}
+22.54%   {background-image: url('img//search-btn/search-22.png');}
+25.76%   {background-image: url('img//search-btn/search-21.png');}
+28.98%   {background-image: url('img//search-btn/search-20.png');}
+32.2%   {background-image: url('img//search-btn/search-19.png');}
+35.42%   {background-image: url('img//search-btn/search-18.png');}
+38.64%   {background-image: url('img//search-btn/search-17.png');}
+41.86%   {background-image: url('img//search-btn/search-16.png');}
+45.08%   {background-image: url('img//search-btn/search-15.png');}
+48.30%   {background-image: url('img//search-btn/search-14.png');}
+51.52%   {background-image: url('img//search-btn/search-13.png');}
+54.74%   {background-image: url('img//search-btn/search-12.png');}
+57.96%   {background-image: url('img//search-btn/search-11.png');}
+61.18%   {background-image: url('img//search-btn/search-10.png');}
+64.4%   {background-image: url('img//search-btn/search-9.png');}
+67.62%   {background-image: url('img//search-btn/search-8.png');}
+70.84%   {background-image: url('img//search-btn/search-7.png');}
+74.06%   {background-image: url('img//search-btn/search-6.png');}
+77.28%   {background-image: url('img//search-btn/search-5.png');}
+80.5%   {background-image: url('img//search-btn/search-4.png');}
+83.72%   {background-image: url('img//search-btn/search-3.png');}
+86.94%   {background-image: url('img//search-btn/search-2.png');}
+100%   {background-image: url('img//search-btn/search-1.png');}
+}
+
+@-webkit-keyframes searchGetOut
+{
+0%   {background-image: url('img//search-btn/search-31.png');}
+3.22%   {background-image: url('img//search-btn/search-28.png');}
+6.44%   {background-image: url('img//search-btn/search-27.png');}
+9.66%   {background-image: url('img//search-btn/search-26.png');}
+12.88%   {background-image: url('img//search-btn/search-25.png');}
+16.1%   {background-image: url('img//search-btn/search-24.png');}
+19.32%   {background-image: url('img//search-btn/search-23.png');}
+22.54%   {background-image: url('img//search-btn/search-22.png');}
+25.76%   {background-image: url('img//search-btn/search-21.png');}
+28.98%   {background-image: url('img//search-btn/search-20.png');}
+32.2%   {background-image: url('img//search-btn/search-19.png');}
+35.42%   {background-image: url('img//search-btn/search-18.png');}
+38.64%   {background-image: url('img//search-btn/search-17.png');}
+41.86%   {background-image: url('img//search-btn/search-16.png');}
+45.08%   {background-image: url('img//search-btn/search-15.png');}
+48.30%   {background-image: url('img//search-btn/search-14.png');}
+51.52%   {background-image: url('img//search-btn/search-13.png');}
+54.74%   {background-image: url('img//search-btn/search-12.png');}
+57.96%   {background-image: url('img//search-btn/search-11.png');}
+61.18%   {background-image: url('img//search-btn/search-10.png');}
+64.4%   {background-image: url('img//search-btn/search-9.png');}
+67.62%   {background-image: url('img//search-btn/search-8.png');}
+70.84%   {background-image: url('img//search-btn/search-7.png');}
+74.06%   {background-image: url('img//search-btn/search-6.png');}
+77.28%   {background-image: url('img//search-btn/search-5.png');}
+80.5%   {background-image: url('img//search-btn/search-4.png');}
+83.72%   {background-image: url('img//search-btn/search-3.png');}
+86.94%   {background-image: url('img//search-btn/search-2.png');}
+100%   {background-image: url('img//search-btn/search-1.png');}
+}
+
+@-moz-keyframes searchGetOut
+{
+0%   {background-image: url('img//search-btn/search-31.png');}
+3.22%   {background-image: url('img//search-btn/search-28.png');}
+6.44%   {background-image: url('img//search-btn/search-27.png');}
+9.66%   {background-image: url('img//search-btn/search-26.png');}
+12.88%   {background-image: url('img//search-btn/search-25.png');}
+16.1%   {background-image: url('img//search-btn/search-24.png');}
+19.32%   {background-image: url('img//search-btn/search-23.png');}
+22.54%   {background-image: url('img//search-btn/search-22.png');}
+25.76%   {background-image: url('img//search-btn/search-21.png');}
+28.98%   {background-image: url('img//search-btn/search-20.png');}
+32.2%   {background-image: url('img//search-btn/search-19.png');}
+35.42%   {background-image: url('img//search-btn/search-18.png');}
+38.64%   {background-image: url('img//search-btn/search-17.png');}
+41.86%   {background-image: url('img//search-btn/search-16.png');}
+45.08%   {background-image: url('img//search-btn/search-15.png');}
+48.30%   {background-image: url('img//search-btn/search-14.png');}
+51.52%   {background-image: url('img//search-btn/search-13.png');}
+54.74%   {background-image: url('img//search-btn/search-12.png');}
+57.96%   {background-image: url('img//search-btn/search-11.png');}
+61.18%   {background-image: url('img//search-btn/search-10.png');}
+64.4%   {background-image: url('img//search-btn/search-9.png');}
+67.62%   {background-image: url('img//search-btn/search-8.png');}
+70.84%   {background-image: url('img//search-btn/search-7.png');}
+74.06%   {background-image: url('img//search-btn/search-6.png');}
+77.28%   {background-image: url('img//search-btn/search-5.png');}
+80.5%   {background-image: url('img//search-btn/search-4.png');}
+83.72%   {background-image: url('img//search-btn/search-3.png');}
+86.94%   {background-image: url('img//search-btn/search-2.png');}
+100%   {background-image: url('img//search-btn/search-1.png');}
+}
+
+
+
+.screen-m() {
+    #header-container {
+        margin-top: 0;
+        width: 768px;
+
+        #logo {
+            margin-left: 20px;
+            margin-right: 13px;
+            margin-top: -10px;
+            margin-bottom: -20px;
+            width: 17%;
+
+            p {
+                text-align: justify;
+                font-size: 7px;
+            }
+        }
+
+        #header-menu {
+            width: 54%;
+            margin-top: 23px;
+
+            .menu {
+                li {
+                    height: 27px;
+ 
+                    a {
+                        font-size: 11px;
+                        line-height: 27px;
+                    }
+
+                    &.l-en {
+                        min-width: 83px;
+                    }
+
+                    &.l-ru {
+                        min-width: 70px;
+
+                        a {
+                            font-size: 11px;
+                        }
+                    }
+
+                    &.l-es {
+                        min-width: 70px;
+
+                        a {
+                            font-size: 9px;
+                        }
+                    }
+
+                    &.l-de {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-nl {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-pt {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-zh {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-cs {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-da {
+                        min-width: 75px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-uk {
+                        min-width: 75px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-he {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 17px;
+                        }
+                    }
+
+                    &.l-it {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 11px;
+                        }
+                    }
+
+                    &.l-nb {
+                        min-width: 78px;
+
+                        a {
+                            font-size: 11px;
+                        }
+                    }
+
+                    &.l-pl {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 13px;
+                        }
+                    }
+
+                    &.l-ko {
+                        min-width: 82px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-sv {
+                        min-width: 78px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-th {
+                        min-width: 78px;
+
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+
+                    &.l-ar {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+
+                    &.l-vi {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-ja {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-hi {
+                        min-width: 80px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &.l-fr {
+                        min-width: 60px;
+
+                        a {
+                            font-size: 10px;
+                        }
+                    }
+
+                     &.l-id {
+                        min-width: 60px;
+
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+
+                     &.l-el {
+                        min-width: 60px;
+
+                        a {
+                            font-size: 11px;
+                        }
+                    }
+
+                     &.l-fi {
+                        min-width: 60px;
+
+                        a {
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .search-container {
+            margin-top: 23px;
+            left: 0px;
+            z-index: 10;
+            width: 155px;
+            min-width: 155px;
+            margin-right: 20px;
+
+            input {
+                font-size: 12px;
+                height: 23px;
+                width: 97px;
+            }
+
+            .search-btn {
+                height: 32px;
+                width: 45px;
+                margin-top: -4px;
+            }
+        }
+    }
+}
+
+
+
+
+

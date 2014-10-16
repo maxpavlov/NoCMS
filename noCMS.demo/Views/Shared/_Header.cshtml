@@ -1,0 +1,30 @@
+﻿@using ClientDependency.Core.Mvc
+@using noCMS.demo.Models
+@{
+    Html.RequiresJs("global/header.js", "Content", 80);
+
+    var model = new HeaderMenuModel();
+    
+
+    model.isRegional = Request.Url.Host.ToLower() == "bleen.local.radacode.net";
+    model.baseCountentUrl = "http://bleen.local.radacode.net/en-us/content/?nrc";
+    model.baseStoreUrl = "http://bleen.local.radacode.net/en-us/store/?nrc";
+
+}
+
+<header>
+    @Html.Hidden("menu-string", "")
+    @Html.Hidden("close-string", "")
+    <div id="header-container">
+        <a id="logo" href="@Url.Action("Index", "Home")">
+            <img src="@Url.Content("/assets/global/img/logo-light.png")" alt="Bleen" />
+            <p>The future is bright. The future is Bleen.</p>
+        </a>
+        <span id="mobile_menu_link">
+        </span>
+        
+        @{ Html.RenderPartial("_HeaderMenu", model); }
+        
+        <div class="clear"></div>
+    </div>
+</header>

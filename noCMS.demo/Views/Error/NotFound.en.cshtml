@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Page not found - Bleen";
+    ViewBag.Description = "";
+}
+
+<div id="not-found-page">
+    <div class="dotted-bg-block">
+        
+        <p class="error-code">404</p>
+        <p class="error-message">Page not found</p>
+        
+        <div class="indicator" style="width: 300px; margin: 0 auto; float: none;">
+            <div class="light-gray" style="width: 67%;">
+                <div class="dark-gray" style="width: 50%;">&nbsp;</div>
+            </div>
+        </div>
+        
+        <p class="error-description">
+            Go to <a href="@Url.Action("Index", "Home")">homepage</a>
+        </p>
+
+    </div>
+</div>

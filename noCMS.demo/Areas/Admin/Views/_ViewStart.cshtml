@@ -1,0 +1,6 @@
+﻿@using noCMS.core
+@{
+    var settings = DependencyResolver.Current.GetService<IApplicationSettings>();
+    
+    Layout = "~/Areas/" + settings.AdminUrlRoot + "/Views/Shared/_Layout.cshtml";
+}

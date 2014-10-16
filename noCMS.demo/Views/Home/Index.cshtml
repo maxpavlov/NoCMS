@@ -1,0 +1,113 @@
+﻿@model noCMS.demo.Models.AboutPageModel
+@using System.Web.Script.Serialization
+@using ClientDependency.Core.Mvc
+@using noCMS.core
+@{
+    
+    var settings = DependencyResolver.Current.GetService<IApplicationSettings>();
+    
+    /* SEO */
+
+    ViewBag.Title = "Demo - NoCMS";
+    ViewBag.Description = "";
+    ViewBag.Keywords = "projector";
+
+    /* END SEO */
+
+    var isAdmin = User.IsInRole("Administrator");
+
+    var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+    
+        Html.RequiresJs("about/about.js", "Content", 80);
+
+        
+}
+
+@if (isAdmin)
+{
+    @Html.Hidden("AddPersonItemUrl", Url.Action("AddPersonItem", "PersonAdmin", new { area = settings.AdminUrlRoot }))
+    @Html.Hidden("UpdatePersonItemUrl", Url.Action("UpdatePersonItem", "PersonAdmin", new { area = settings.AdminUrlRoot }))
+    @Html.Hidden("RemovePersonItemUrl", Url.Action("RemoveItem", "PersonAdmin", new { area = settings.AdminUrlRoot }))
+    @Html.Hidden("UpdateItemVersionUrl", Url.Action("UpdateItemVersion", "PersonAdmin", new { area = settings.AdminUrlRoot }))
+    @Html.Hidden("FileHandlerUrl", "/Areas/" + settings.AdminUrlRoot + "/FileHandler/Handler.ashx")
+}
+
+<div id="about-wrapper">
+    @Html.Hidden("initial-data", (HtmlString)initValue)
+
+    <div id="about-container" data-bind="@Html.Raw(isAdmin ? "radacodeRichEditor: { getUrl: app.GetUrl, saveUrl: app.SaveUrl, id: 'about-page', isEditable: app.IsInAdminMode, onConfigLoaded: app.OnConfigLoaded, selectByCountry: false }, stopBinding: true" : "")">
+        @if (!isAdmin && !string.IsNullOrEmpty(Model.AboutMarkup))
+        {
+            @Html.Raw(Model.AboutMarkup)
+        }
+    </div>
+    
+    @if (isAdmin)
+    {
+        <div class="person-controls">
+            <button class="btn edit-button" type="button" data-bind="click: AddPersonItem"><span>Add person</span></button>
+        </div>
+    }
+    
+    <div class="person-container" data-bind="template: { name: 'person-item-template', foreach: PersonList }">
+    </div>
+    
+
+
+    @{ Html.RenderPartial("_FutureBanner", "about-page-footer"); }
+    
+    
+    
+    <script type="text/html" id="person-item-template">
+        <div class="person" data-bind="attr: { id: Id + '-person-item'}">
+
+            @if (isAdmin)
+            {
+                <div class="person-item-controls">
+                    <button class="btn btn-danger item-remove" title="Remove item" type="button" data-bind="click: RemoveItem">
+                        <i class="icon-remove icon-white"></i>
+                    </button>
+                    
+                    <div class="btn-upload">
+                        <form method="POST" enctype="multipart/form-data">
+                            <div class="fileupload-buttonbar">
+                                <span class="btn btn-success fileinput-button">
+                                    <i class="icon-picture icon-white"></i>
+                                    <input type="file" title="upload image in png format" name="img" accept="image/png" data-bind="event: { change: function () { uploadImage($element.files[0]) } }">
+                                </span>
+                            </div>
+                            <table>
+                                <tbody class="files"></tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                
+            }
+            
+            <img src="/assets/global/img/top-background.png" />
+            <div class="name-age">
+                @*<p class="person-name" ><span class="first-name">FName </span><span class="last-name"> LName</span></p>*@
+                <p class="person-name"><span class="first-name" data-bind="inlineInputDoubleClick: FullName, inAdminMode: app.IsInAdminMode">Full Name</span></p>
+                <p class="person-age"></p>
+            </div>
+
+            <p class="person-position" data-bind="inlineInputDoubleClick: Position, inAdminMode: app.IsInAdminMode">person position</p>
+            <p class="person-description" data-bind="inlineTextArea: Description, inAdminMode: app.IsInAdminMode">About person</p>
+
+            <div class="person-photo-container ppc1">
+
+                <div class="person-photo">
+                    <p><img src="" alt="person face" data-bind="attr: { src: ImageSrc() }" /></p>
+                    <div class="person-photo-overlay"></div>
+                </div>
+            </div>
+            <div class="person-dotted-bg"> </div>
+            <div class="clear"></div>
+        </div>
+    </script>
+
+</div>
+
+
+

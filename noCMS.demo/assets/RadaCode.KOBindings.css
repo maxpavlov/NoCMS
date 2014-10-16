@@ -1,0 +1,23 @@
+﻿input.inline-input
+{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    height: auto;
+    line-height: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    margin-bottom: auto;
+}
+
+#loading-panel {
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    display: none;
+    position: absolute;
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    background: url(img/loading.gif)  no-repeat center center fixed;
+    background-color: #eaeaea ;
+}

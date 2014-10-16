@@ -1,0 +1,51 @@
+﻿
+#gallery-prev-button {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: url(img/arrow-left.png);
+    cursor: pointer;
+    top: calc(50% - 32px);
+    opacity: 0.3;
+    z-index: 10;
+}
+
+
+#gallery-next-button {
+    width: 64px;
+    height: 64px;
+    background: url(img/arrow-right.png);
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 32px);
+    opacity: 0.3;
+    z-index: 10;
+}
+
+#gallery-prev-button:hover, #gallery-next-button:hover {
+    opacity: 1;
+}
+
+.gallery-image {
+    height: inherit;
+    background-size: 100% 100% !important;
+}
+
+.slidesjs-container {
+    width: inherit !important;
+    height: inherit !important;
+}
+
+.slidesjs-container .slidesjs-control{
+    width: inherit !important;
+    height: inherit !important;
+}
+
+.slidesjs-container .slidesjs-control img{
+    background-color: white;
+    width: inherit !important;
+    height: inherit !important;
+}
+
+.ui-resizable-helper { border: 2px dotted #00F; }

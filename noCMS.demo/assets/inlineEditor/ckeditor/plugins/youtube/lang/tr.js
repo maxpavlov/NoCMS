@@ -1,0 +1,21 @@
+﻿CKEDITOR.plugins.setLang('youtube', 'tr', {
+	button : 'Youtube Video GГ¶mГјn (Embed)',
+	title : 'Youtube Video',
+	txtEmbed : 'Youtube gГ¶mГјlГј kodu (embed) buraya yapД±ЕџtД±rД±nД±z',
+	txtUrl : 'Youtube linkinizi buraya yapД±ЕџtД±rД±nД±z',
+	txtWidth : 'GeniЕџlik',
+	txtHeight : 'YГјkseklik',
+	chkRelated : 'Г–nerilen videolarД± video bitiminde gГ¶ster',
+	txtStartAt : 'Video baЕџlangД±Г§ anД± (ss ya da dd:ss ya da ss:dd:ss)',
+	chkPrivacy : 'Gizlilik modunu etkinleЕџtir',
+	chkOlderCode : 'Eski gГ¶mГјlГј kodu (embed) kullan',
+	noCode : 'GГ¶mГјlГј kod (embed) veya url yapД±ЕџtД±rmak zorundasД±nД±z',
+	invalidEmbed : 'VerdiДџiniz gГ¶mГјlГј kod (embed) ile video bulunamadД±',
+	invalidUrl : 'VerdiДџiniz linkte video bulunamadД±',
+	or : 'ya da',
+	noWidth : 'GeniЕџliДџi belirtmek zorundasД±nД±z',
+	invalidWidth : 'Bir geniЕџlik belirtin',
+	noHeight : 'YГјkseliДџi belirtmek zorundasД±nД±z',
+	invalidHeight : 'YГјkseklik belirtin',
+	invalidTime : 'BaЕџlangД±Г§ anД±nД± doДџru girin, Г¶rneДџin: 13 (13. saniye) ya da 12:25 (12. dakika 25. saniye) ya da 01.25.33 (1 saat 25 dakika 33 saniye)'
+});

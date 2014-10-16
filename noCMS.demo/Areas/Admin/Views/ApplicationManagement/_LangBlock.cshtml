@@ -1,0 +1,24 @@
+﻿@using System.Threading
+@using ClientDependency.Core.Mvc
+@model bleen.com.Models.LanguageBlockModel
+@{
+    Html.RequiresCss("global/idd/dd.css", "Content", 101);
+    Html.RequiresJs("global/idd/jquery.dd.min.js", "Content", 20);
+
+    var curlang = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+}
+
+
+<div id="lang-block">
+    <div id="lang-top-line">
+        <div id="uk" class="lang-button @(curlang == "uk" ? " selected" : "")">
+            <img src="@Url.Content("~/Content/global/img/ukr.png")" alt="УКР"/>
+        </div>
+        <div id="ru" class="lang-button @(curlang == "ru" ? " selected" : "")">
+            <img src="@Url.Content("~/Content/global/img/rus.png")" alt="РУС"/>
+        </div>
+        <div id="en" class="lang-button @(curlang == "en" ? " selected" : "")">
+            <img src="@Url.Content("~/Content/global/img/eng.png")" alt="ENG"/>
+        </div>
+    </div>
+</div>

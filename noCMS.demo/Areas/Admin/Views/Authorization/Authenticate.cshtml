@@ -1,0 +1,37 @@
+﻿@using noCMS.core
+@model noCMS.demo.Areas.Admin.Models.LoginModel
+
+@{
+	ViewBag.Title = "Login to the site administration area";
+
+    var settings = DependencyResolver.Current.GetService<IApplicationSettings>();
+}
+
+@section ViewScripts {
+
+}
+
+<div id="login-block">
+	<h2>Please login</h2>
+
+	@using (Html.BeginForm("Login", "Authorization", new { area = settings.AdminUrlRoot }, FormMethod.Post, new {id = "login-form"}))
+	{
+		<div class="editor-label">
+					@Html.LabelFor(m => m.Name)
+		</div>
+		<div class="editor-field">
+			@Html.TextBoxFor(m => m.Name, new { id="username" })
+			@Html.ValidationMessageFor(m => m.Name)
+		</div>
+	 
+		<div class="editor-label">
+					@Html.LabelFor(m => m.Pazz)
+		</div>
+		<div class="editor-field">
+			@Html.PasswordFor(m => m.Pazz, new { id="pazz" })
+			@Html.ValidationMessageFor(m => m.Pazz)
+		</div>
+	 
+		<input type="submit" value="Login"/>
+	}
+</div>

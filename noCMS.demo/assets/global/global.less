@@ -1,0 +1,1781 @@
+﻿html {
+    overflow: auto;
+}
+
+body.iOS .unmute{ display: none; }
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    min-width: 768px;
+
+    &.light {
+        background: #d0d4d8;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-image: url('img/background-light.png');
+        background-attachment: fixed;
+    }
+
+    &.dark {
+        background: #161c28;
+    }
+}
+
+#loading-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    position: fixed;
+    background-image: url(/assets/global/img/loading.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 0;
+    top: 0;
+}
+
+#wrapper {
+    margin: 0 auto;
+}
+
+#middle {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1050px;
+    margin-top: -15px;
+}
+
+.admin-wrap {
+    height: auto;
+    display: none;
+    width: 100%;
+    color: white;
+    background-color: #434343;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+
+    input[type="submit"] {
+        height: 30px;
+        width: 50px;
+    }
+
+    input[type="text"], input[type="password"] {
+        text-align: center;
+    }
+
+}
+.admin-wrap 
+
+.form-horizontal div {
+    width: 200px;
+    margin: 10px auto;
+}
+
+.btn.edit-button {
+    opacity: 1.0 !important;
+    display: block;
+}
+
+.btn.save-button {
+    opacity: 1.0 !important;
+    position: absolute;
+    margin-top: -34px;
+}
+
+#top-bleen-wrapper {
+    height: 500px;
+    width: 100%;
+    max-width: 1050px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    position: relative;
+    background: url('img/dotted-bg-light.png') no-repeat;
+    background-position: center 10%;
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+    background-size: 100% 88%;
+}
+
+#top-bleen-tool {
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-height: 500px;
+}
+
+#top-bleen-tool img {
+    width: 100%;
+}
+
+body.light #top-bleen-tool img.dark-tool {
+    display: none;
+}
+
+body.light #top-bleen-tool img.big-egg {
+    width: auto;
+    height: 100%;
+    margin-top: -4%;
+    margin-left: 2%;
+}
+
+body.light #top-bleen-tool img.big-mg {
+    width: auto;
+    max-width: 100%;
+    max-height: 95%;
+}
+
+#top-bleen-controls {
+    width: 18%;
+    height: 44%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 100;
+    position: relative;
+    min-width: 121px;
+    margin-top: -39.5%;
+
+    .get-linkpath {
+        margin-left: 50px;
+        position: absolute;
+        z-index: 1001;
+
+        input {
+        }
+    }
+}
+
+#top-bleen-controls .watch-video {
+    cursor: pointer;
+}
+
+#top-bleen-controls .watch-text {
+    text-align: center;
+    font-family: 'Open Sans Light';
+    font-size: 16px;
+    color: #87888b;
+    margin-bottom: 2px;
+
+    &.watch-text-dark {
+        color: white;
+        font-weight: bold;
+    }
+
+    &.watch-text-light {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 1px 1px 10px #000;
+    }
+}
+
+
+#top-bleen-controls .watch-btn {
+    margin-top: -20px;
+    text-align: center;
+}
+
+#top-bleen-controls .watch-btn-img {
+    margin-bottom: -14px;
+    width: 17%;
+    padding: 20px;
+}
+
+#top-bleen-controls .watch-btn-img:hover {
+    background: url(img/shine.png);
+    background-position-x: 3px;
+}
+
+.watch-connector {
+    width: 24px;
+    height: 20px;
+    background-image: url('img/watch-connector.png');
+    background-position: top center;
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+#top-bleen-controls .get-circle {
+    width: 100%;
+    height: 175px;
+    cursor: pointer;
+    position: relative;
+    margin-left: 2px;
+    background-image: url(img/get-frames/get-20060.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-animation-name: getOut;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: getOut;
+    -o-animation-name: getOut;
+    animation-name: getOut;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    text-decoration: none;
+    display: block;
+
+}
+
+#top-bleen-controls .get-circle:hover {
+    -webkit-animation-name: getIn;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-name: getIn;
+    -o-animation-name: getIn;
+    animation-name: getIn;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+
+
+@-webkit-keyframes getOut {
+    0% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+}
+
+@-moz-keyframes getOut {
+    0% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+}
+
+@keyframes getOut {
+    0% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+}
+
+@-webkit-keyframes getIn {
+    0% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+}
+
+@keyframes getIn {
+    0% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+}
+
+@-moz-keyframes getIn {
+    0% {
+        background-image: url(img/get-frames/get-20000.png);
+    }
+
+    3.28% {
+        background-image: url(img/get-frames/get-20002.png);
+    }
+
+    6.56% {
+        background-image: url(img/get-frames/get-20004.png);
+    }
+
+    9.84% {
+        background-image: url(img/get-frames/get-20006.png);
+    }
+
+    13.12% {
+        background-image: url(img/get-frames/get-20008.png);
+    }
+
+    16.4% {
+        background-image: url(img/get-frames/get-20010.png);
+    }
+
+    19.68% {
+        background-image: url(img/get-frames/get-20012.png);
+    }
+
+    22.95% {
+        background-image: url(img/get-frames/get-20014.png);
+    }
+
+    26.24% {
+        background-image: url(img/get-frames/get-20016.png);
+    }
+
+    29.52% {
+        background-image: url(img/get-frames/get-20018.png);
+    }
+
+    32.8% {
+        background-image: url(img/get-frames/get-20020.png);
+    }
+
+    36.08% {
+        background-image: url(img/get-frames/get-20022.png);
+    }
+
+    39.36% {
+        background-image: url(img/get-frames/get-20024.png);
+    }
+
+    42.64% {
+        background-image: url(img/get-frames/get-20026.png);
+    }
+
+    45.91% {
+        background-image: url(img/get-frames/get-20028.png);
+    }
+
+    49.19% {
+        background-image: url(img/get-frames/get-20030.png);
+    }
+
+    52.48% {
+        background-image: url(img/get-frames/get-20032.png);
+    }
+
+    55.76% {
+        background-image: url(img/get-frames/get-20034.png);
+    }
+
+    59.04% {
+        background-image: url(img/get-frames/get-20036.png);
+    }
+
+    62.31% {
+        background-image: url(img/get-frames/get-20038.png);
+    }
+
+    65.6% {
+        background-image: url(img/get-frames/get-20040.png);
+    }
+
+    68.88% {
+        background-image: url(img/get-frames/get-20042.png);
+    }
+
+    72.16% {
+        background-image: url(img/get-frames/get-20044.png);
+    }
+
+    75.44% {
+        background-image: url(img/get-frames/get-20046.png);
+    }
+
+    78.72% {
+        background-image: url(img/get-frames/get-20048.png);
+    }
+
+    82% {
+        background-image: url(img/get-frames/get-20050.png);
+    }
+
+    85.28% {
+        background-image: url(img/get-frames/get-20052.png);
+    }
+
+    88.55% {
+        background-image: url(img/get-frames/get-20054.png);
+    }
+
+    91.83% {
+        background-image: url(img/get-frames/get-20056.png);
+    }
+
+    95.11% {
+        background-image: url(img/get-frames/get-20058.png);
+    }
+
+    100% {
+        background-image: url(img/get-frames/get-20060.png);
+    }
+}
+
+#top-bleen-controls .get-circle .get {
+    font-family: "Archive";
+    font-size: 40px;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    color: #87888b;
+    width: 100%;
+    cursor: pointer;
+    padding-right: 5px;
+
+    &.l-en {
+        font-size: 28px;
+        top: 42px;
+    }
+
+    &.l-ru {
+        font-size: 18px;
+        top: 60px;
+    }
+
+    &.l-es {
+        font-size: 20px;
+        top: 53px
+    }
+
+    &.l-de {
+        font-size: 18px;
+        top: 58px
+    }
+
+    &.l-nl {
+        font-size: 25px;
+        top: 50px
+    }
+
+    &.l-pt {
+        font-size: 25px;
+        top: 50px
+    }
+
+    &.l-zh {
+        font-size: 25px;
+        top: 50px
+    }
+
+    &.l-cs {
+        font-size: 22px;
+        top: 50px
+    }
+
+    &.l-da {
+        font-size: 22px;
+        top: 50px
+    }
+
+    &.l-uk {
+        font-size: 15px;
+        top: 60px;
+    }
+
+    &.l-fi {
+        font-size: 26px;
+        top: 45px;
+
+    }
+
+    &.l-fr {
+        font-size: 21px;
+        top: 53px;
+    }
+
+    &.l-el {
+        font-size: 22px;
+        top: 33px;
+    }
+
+    &.l-hi {
+        font-size: 22px;
+    }
+
+    &.l-id {
+        font-size: 27px;
+        top: 28px;
+    }
+
+    &.l-he {
+        font-size: 27px;
+        top: 40px;
+    }
+
+    &.l-el {
+        font-size: 27px;
+        top: 43px;
+    }
+
+    &.l-hi {
+        font-size: 27px;
+        top: 43px;
+    }
+
+    &.l-id {
+        font-size: 27px;
+        top: 43px;
+    }
+
+    &.l-it {
+        font-size: 19px;
+        top: 58px;
+    }
+
+    &.l-ja {
+        font-size: 19px;
+        top: 50px;
+    }
+
+    &.l-nb {
+        font-size: 25px;
+        top: 50px;
+    }
+
+    &.l-pl {
+        font-size: 25px;
+        top: 45px;
+    }
+
+    &.l-ko {
+        font-size: 25px;
+        top: 45px;
+    }
+
+    &.l-sv {
+        font-size: 25px;
+        top: 45px;
+    }
+
+    &.l-th {
+        font-size: 18px;
+        top: 59px;
+    }
+
+    &.l-ar {
+        font-size: 18px;
+        top: 50px;
+    }
+
+    &.l-vi {
+        font-size: 18px;
+        top: 50px;
+    }
+}
+
+
+#top-bleen-controls .get-circle .your-bleen {
+    text-align: center;
+    font-family: 'Open Sans Light';
+    font-size: 14px;
+    color: #87888b;
+    position: absolute;
+    top: 48%;
+    width: 100%;
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+#top-bleen-controls .get-circle .get-circle-img {
+    width: 100%;
+}
+
+body.light #top-bleen-controls .get-circle .get-circle-img.dark-circle {
+    display: none;
+}
+
+#future-banner {
+    clear: both;
+    margin-top: 50px;
+
+    .gototop {
+        width: 10%;
+        margin: 0 auto;
+        cursor: pointer;
+        margin-bottom: 15px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .text-container {
+        width: 100%;
+        min-height: 50%;
+    }
+}
+
+.indicator {
+    border-radius: 15px;
+    height: 16px;
+    background: #f0f1f3;
+    position: relative;
+    float: left;
+
+    .light-gray {
+        display: inline-block;
+        border-radius: 15px;
+        height: 16px;
+        background: #b7bfc5;
+        width: 75%;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+    }
+
+    .dark-gray {
+        display: inline-block;
+        border-radius: 15px;
+        height: 16px;
+        background: #818b93;
+        width: 35%;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+    }
+}
+
+#tool-indicators .indicator {
+    width: 30%;
+    margin-right: 5%;
+    border-radius: 15px;
+    height: 16px;
+    background: #f0f1f3;
+    position: relative;
+    float: left;
+}
+
+#tool-indicators :last-child {
+    margin-right: 0;
+}
+
+#tool-indicators .indicator .light-gray {
+    display: inline-block;
+    border-radius: 15px;
+    height: 16px;
+    background: #b7bfc5;
+    width: 75%;
+    position: absolute;
+    z-index: 1;
+}
+
+#tool-indicators .indicator .dark-gray {
+    display: inline-block;
+    border-radius: 15px;
+    height: 16px;
+    background: #818b93;
+    width: 35%;
+    position: absolute;
+    z-index: 2;
+}
+
+
+.screen-m() {
+    #top-bleen-wrapper {
+        height: 340px;
+
+        #top-bleen-tool {
+            width: 400px;
+
+            img.big-mg {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+
+    #top-bleen-controls {
+        width: 140px;
+        height: 150px;
+        margin-top: -290px;
+
+        .watch-connector {
+            height: 15px;
+        }
+
+        .get-circle {
+
+            .get {
+
+                &.l-en {
+                    font-size: 22px;
+                    top: 32px;
+                }
+
+                &.l-ru {
+                    font-size: 14px;
+                    top: 43px;
+                }
+
+                &.l-es {
+                    font-size: 15px;
+                    top: 41px;
+                }
+
+                &.l-de {
+                    font-size: 14px;
+                    top: 41px;
+                }
+
+                &.l-id {
+                    font-size: 27px;
+                    top: 27px;
+                }
+
+                &.l-nl {
+                    font-size: 20px;
+                    top: 35px;
+                }
+
+                &.l-pt {
+                    font-size: 20px;
+                    top: 35px;
+                }
+
+                &.l-zh {
+                    font-size: 20px;
+                    top: 35px;
+                }
+
+                &.l-cs {
+                    font-size: 16px;
+                    top: 40px;
+                }
+
+                &.l-da {
+                    font-size: 16px;
+                    top: 40px;
+                }
+
+                &.l-uk {
+                    font-size: 12px;
+                    top: 40px;
+                }
+
+                &.l-it {
+                    font-size: 12px;
+                    top: 40px;
+                }
+
+                &.l-ja {
+                    font-size: 17px;
+                    top: 37px;
+                }
+
+                &.l-nb {
+                    font-size: 17px;
+                    top: 37px;
+                }
+
+                &.l-pl {
+                    font-size: 17px;
+                    top: 37px;
+                }
+
+                &.l-ko {
+                    font-size: 18px;
+                    top: 34px;
+                }
+
+                &.l-sv {
+                    font-size: 22px;
+                    top: 30px;
+                }
+
+                &.l-th {
+                    font-size: 13px;
+                    top: 43px;
+                }
+
+                &.l-he {
+                    font-size: 27px;
+                    top: 27px;
+                }
+
+                &.l-ar {
+                   font-size: 17px;
+                    top: 33px;
+                }
+
+                &.l-vi {
+                   font-size: 17px;
+                    top: 37px;
+                }
+
+                &.l-hi {
+                   font-size: 17px;
+                    top: 37px;
+                }
+
+                &.l-el {
+                   font-size: 22px;
+                    top: 32px
+                }
+
+                &.l-fr {
+                   font-size: 15px;
+                    top: 40px;
+                }
+
+                &.l-fi {
+                   font-size: 18px;
+                    top: 36px;
+                }
+             }
+
+            .your-bleen {
+                font-size: 13px;
+                top: 60px;
+
+                &.l-vi {
+                   font-size: 12px;
+                }
+
+                &.l-de {
+                   font-size: 12px;
+                }
+
+                &.l-ja {
+                   font-size: 11px;
+                }
+
+                 &.l-it {
+                   font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+#breadcrumbs {
+    margin: 0 auto;
+    clear: both;
+    width: 450px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+
+    > div {
+        display: inline-block;
+    }
+
+    .left-circle {
+        border: 1px solid #bcbec0;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        margin-right: 15px;
+    }
+
+    .left-second-circle {
+        border: 1px solid #bcbec0;
+        width: 13px;
+        height: 13px;
+        border-radius: 13px;
+        margin-right: 27px;
+    }
+
+    .left-three-circle {
+        border: 1px solid #bcbec0;
+        width: 18px;
+        height: 18px;
+        border-radius: 18px;
+        margin-right: 25px;
+    }
+
+    .first-text {
+        border: 1px solid #bcbec0;
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+        font-family: 'Archive';
+        font-size: 30px;
+        margin-bottom: -9px;
+
+        a {
+            margin-top: 5px;
+            display: block;
+            position: absolute;
+            color: #bcbec0;
+            text-decoration: none;
+            width: inherit;
+            text-align: center;
+        }
+    }
+
+    .line {
+        height: 1px;
+        background: #bcbec0;
+        width: 20px;
+        margin-bottom: 12px;
+        margin-left: -4px;
+    }
+
+    .current-controller {
+        border: 1px solid #bcbec0;
+        width: 55px;
+        height: 55px;
+        border-radius: 55px;
+        font-family: 'Archive';
+        font-size: 30px;
+        margin-bottom: -15px;
+        margin-left: -4px;
+
+        a {
+            margin-left: 22px;
+            margin-top: 10px;
+            display: block;
+            position: absolute;
+            color: #bcbec0;
+            z-index: 10;
+            text-decoration: none;
+        }
+    }
+
+    .decor-circle {
+        border: 1px solid #bcbec0;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        margin-left: 22px;
+        margin-right: 20px;
+    }
+}
+
+
+
+#video-container {
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 10px;
+    video {
+        width: 100%;
+    }
+
+
+    .video-controls {
+        width: 100%;
+        height: 25px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        position: relative;
+        display: inline;
+
+        .play-pause-button {
+            float: left;
+            width: 20px;
+            height: 25px;
+            margin-right: 15px;
+
+            .play-button {
+                width: 0;
+                height: 0;
+                border-top: 10px solid transparent;
+                border-left: 15px solid #87888b;
+                border-bottom: 10px solid transparent;
+                margin-top: 2px;
+                cursor: pointer;
+                display: none;
+            }
+
+            &.played {
+                .play-button {
+                    display: none;
+                }
+
+
+                .pause-button {
+                    display: block;
+                }
+            }
+
+            &.paused {
+                .play-button {
+                    display: block;
+                }
+
+
+                .pause-button {
+                    display: none;
+                }
+            }
+
+            .pause-button {
+                overflow: hidden;
+                margin-top: 4px;
+                cursor: pointer;
+
+                .bl {
+                    width: 5px;
+                    height: 15px;
+                    background: #87888b;
+                    float: left;
+                }
+
+                .bl-right {
+                    margin-left: 3px;
+                }
+            }
+        }
+
+        .video-progress {
+            margin-left: 25px;
+            height: 25px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 2px;
+            width: 100%;
+            float: left;
+
+            .progress-back-line {
+                position: absolute;
+                left: 0px;
+                top: 12px;
+                width: 100%;
+                border-bottom: 1px solid #87888b;
+            }
+
+            .progress-left-circle {
+                height: 7px;
+                width: 7px;
+                background-color: #87888b;
+                border-radius: 10px;
+                left: -2px;
+                top: 9px;
+                position: absolute;
+            }
+
+            .progress-right-circle {
+                height: 7px;
+                width: 7px;
+                background-color: #87888b;
+                border-radius: 10px;
+                right: -2px;
+                top: 9px;
+                position: absolute;
+            }
+
+            .progress-bar {
+                height: 3px;
+                background: #87888b;
+                position: absolute;
+                top: 11px;
+                left: 2px;
+
+                .button-holder {
+                    position: relative;
+                    margin-top: -2px;
+
+                    .progress-button {
+                        position: absolute;
+                        height: 7px;
+                        width: 7px;
+                        background-color: #87888b;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+
+        .sound-control {
+            display: table-cell;
+            cursor: pointer;
+            height: 25px;
+
+            .unmute {
+                margin-left: 15px;
+                height: 25px;
+                width: 23px;
+                background-image: url('/assets/content/img/unmute.png');
+                background-size: contain;
+
+                &.mute {
+                    height: 25px;
+                    width: 23px;
+                    background-image: url('/assets/content/img/mute.png');
+                }
+            }
+        }
+    }
+}
+
+#close-video {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 10px;
+    font-family: "Archive";
+    color: #818b93;
+    display: block;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 23px;
+    background-image: url(img/close.png);
+    background-color: rgba(0,0,0,0.2);
+    background-position: center;
+}
+
+.ui.modal {
+    margin-top: -255px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+
+/***** NOT FOUND PAGE  *****/
+
+#not-found-page {
+    margin-top: 10px;
+    margin-bottom: 0;
+    overflow: hidden;
+    position: relative;
+
+    .dotted-bg-block {
+        width: 100%;
+        height: 450px;
+        max-height: 450px;
+        background-image: url(img/dotted-bg-light.png);
+        background-size: contain;
+        background-position: top center;
+        position: relative;
+        padding: 1px;
+
+        .error-code {
+            font-family: archive;
+            color: #7b8999;
+            font-size: 120px;
+            line-height: 100px;
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 90px;
+        }
+
+        .error-message {
+            font-family: archive;
+            color: #b3bdc8;
+            font-size: 26px;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+        .error-description {
+            font-family: archive;
+            font-size: 16px;
+            color: #7b8999;
+            text-align: center;
+            margin-top: 25px;
+
+            a {
+                text-decoration: underline;
+                color: #b3bdc8;
+
+                &:hover {
+                    color: #7b8999;
+                }
+            }
+        }
+    }
+}

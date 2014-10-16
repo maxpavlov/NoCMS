@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "other.css",
+  "sources": [
+    "other.less"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACI,gBAAA;;AAGJ;EACI,gBAAA;;AAGJ;EACI,gBAAA;;AAGJ;EACI,gBAAA"
+}

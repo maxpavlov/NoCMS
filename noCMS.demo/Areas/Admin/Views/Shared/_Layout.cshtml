@@ -1,0 +1,146 @@
+﻿@using ClientDependency.Core
+@using ClientDependency.Core
+@using ClientDependency.Core.Mvc
+@using noCMS.core
+
+@{
+    var settings = DependencyResolver.Current.GetService<IApplicationSettings>();
+}
+
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="text/html; charset=windows-1251" http-equiv="content-type" />
+	<title>@ViewBag.Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="@Url.Content("~/favicon.ico")">
+	<link rel="apple-touch-icon" href="@Url.Content("~/apple-touch-icon.png")">
+	
+	@{
+		@RenderSection("ViewHead", false)
+
+        @MvcHtmlString.Create(Html.RenderCssHere(new List<IClientDependencyPath>
+                                                     {
+                                                         new BasicPath("Theme", "~/Content/themes/smoothness"),
+                                                         new BasicPath("googleCDN", "https://ajax.googleapis.com/ajax/libs/"),
+                                                         new BasicPath("Content", "~/assets"),
+                                                         new BasicPath("AreaContent", "~/Areas/" + settings.AdminUrlRoot + "/Content/")
+                                                     }).ToString())
+
+        @MvcHtmlString.Create(Html.RenderJsHere(new List<IClientDependencyPath>
+                                                    {
+                                                        new BasicPath("Scripts", "~/Scripts"),
+                                                        new BasicPath("googleCDN", "https://ajax.googleapis.com/ajax/libs/"),
+                                                        new BasicPath("Content", "~/assets"),
+                                                        new BasicPath("AreaContent", "~/Areas/" + settings.AdminUrlRoot + "/Content/"),
+                                                        new BasicPath("ViewScripts", "~/Areas/" + settings.AdminUrlRoot + "/Content/ViewScripts")
+                                                              
+                                                    }).ToString())
+
+        Html.RequiresCss("jquery.ui.theme.css", "Theme", 96);
+        Html.RequiresCss("Bootstrap/css/bootstrap.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/docs.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/prettify.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/bootstrap-responsive.css", "AreaContent", 98);
+
+        //Chosen
+        Html.RequiresCss("Chosen/chosen.css", "AreaContent", 98);
+        //Html.RequiresJs("Chosen/chosen.jquery.min.js", "AreaContent", 10);
+        //Html.RequiresJs("Chosen/chosen.jquery.optgroup.min.js", "AreaContent", 10);
+        Html.RequiresJs("Chosen/chosen.jquery.js", "AreaContent", 10);
+
+        Html.RequiresCss("admin.less", "AreaContent", 99);
+
+        Html.RequiresJs("https://code.jquery.com/jquery-1.8.0.js", 1);
+        Html.RequiresJs("knockout-3.1.0.js", "Scripts", 2);
+        Html.RequiresJs("RadaCode.KOBindings.js", "Scripts", 3);
+        Html.RequiresJs("knockout.validation.js", "Scripts", 3);
+        Html.RequiresJs("RadaCode.GlobalScripts.js", "Scripts", 9);
+
+        Html.RequiresCss("fancybox/jquery.fancybox.css", "Content", 80);
+        Html.RequiresJs("fancybox/jquery.fancybox.js", "Content", 80);
+        
+		Html.RequiresJs("jqueryui/1.9.2/jquery-ui.min.js", "googleCDN", 2);
+		Html.RequiresJs("modernizr-2.6.2.js", "Scripts", 5);
+		Html.RequiresJs("jquery.cookie.js", "Scripts", 9);
+
+        Html.RequiresCss("FileUpload/jquery.fileupload-ui.css", "AreaContent", 101);
+
+        Html.RequiresJs("global.js", "Scripts", 9);
+        
+        @RenderSection("ViewScripts", false)
+		}
+
+</head>
+<body>
+    @Html.Hidden("area-name", settings.AdminUrlRoot)
+
+    @{ Html.RenderPartial("_Header");}
+
+    <div id="content">
+        @RenderBody()
+    </div>
+    
+    @{ Html.RequiresJs("global.js", "Scripts", 10); }
+</body>
+</html>
+
+<!-- The template to display files available for upload -->
+<script id="template-upload-empty" type="text/x-tmpl">
+{</script>
+<!-- The template to display files available for download -->
+<script id="template-download-empty" type="text/x-tmpl">
+</script>
+<!-- The template to display files available for upload -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td class="name"><span>{%=file.name%}</span></td>
+		{% if (file.error) { %}
+			<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+		{% } else if (o.files.valid && !i) { %}
+			<td>
+				<div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+			</td>
+			<td class="start">{% if (!o.options.autoUpload) { %}
+				<button class="btn btn-primary">
+					<i class="icon-upload icon-white"></i>
+					<span>{%=locale.fileupload.start%}</span>
+				</button>
+			{% } %}</td>
+		{% } else { %}
+		{% } %}
+		<td class="cancel">{% if (!i) { %}
+			<button class="btn btn-warning">
+				<i class="icon-ban-circle icon-white"></i>
+				<span>{%=locale.fileupload.cancel%}</span>
+			</button>
+		{% } %}</td>
+	</tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-download fade">
+		{% if (file.error) { %}
+			<td></td>
+			<td class="name"><span>{%=file.name%}</span></td>
+			<td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+			<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+		{% } else { %}
+			<td class="name">
+				<a href="{%=file.url.substring(file.url.indexOf('/'))%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+			</td>
+		{% } %}
+		<td class="delete">
+			<button type="button" class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+				<i class="icon-trash icon-white"></i>
+				<span>�������</span>
+			</button>
+		</td>
+	</tr>
+{% } %}
+</script>

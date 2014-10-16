@@ -1,0 +1,227 @@
+﻿.editable-block {
+    p {
+        margin: 0;
+    }
+}
+
+.cke_editable_inline {
+    .person-photo-overlay {
+        display: none;
+    }
+}
+
+#dotted-bg-block {
+    width: 100%;
+    background-image: url(img/dotted-bg-light.png);
+    background-size: contain;
+    background-position: top center;
+}
+
+#container-with-border {
+    width: 100%;
+    border: 1px solid #c9ced4;
+    min-height: 50px;
+    padding: 20px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.person {
+    margin-right: 4%;
+    width: 30%;
+    min-width: 201px;
+    position: relative;
+    display: inline-block;
+    vertical-align: text-top;
+
+    input {
+        width: 90% !important;
+        background: transparent;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        height: 30px;
+        margin-bottom: 0;
+    }
+
+    .clear {
+        height: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+    .name-age {
+        position: relative;
+        font-family: "Archive";
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        input {
+            font-family: "Archive";
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .person-name {
+            margin-top: 10px;
+
+            .first-name {
+                color: #818a93;
+            }
+
+            .last-name {
+                color: #b7bec5;
+            }
+        }
+
+        .person-age {
+            position: absolute;
+            right: 0;
+            top: 0;
+            float: right;
+            color: #b7bec5;
+        }
+    }
+
+    .person-position {
+        color: #818a93;
+        font-family: "Archive";
+        font-size: 16px;
+        margin-bottom: 5px;
+
+        
+    }
+
+    input.person-position {
+            font-family: "Archive";
+            font-size: 16px;
+            text-align: center;
+            height: 25px;
+        }
+
+    .person-description {
+        font-family: 'Open Sans Light';
+        font-size: 14px;
+        color: #8d969e;
+        line-height: 17px;
+        margin-bottom: 15px;
+
+        
+    }
+
+    textarea.person-description {
+            width: 90% !important;
+            background: transparent;
+            box-sizing: border-box;
+            min-height: 28px;
+            height: 28px;
+
+        }
+
+    .person-photo-container {
+        float: left;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 64%;
+        z-index: 11;
+        position: relative;
+
+        .person-photo {
+            border-radius: 50%;
+            height: 70%;
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 15%;
+            overflow: hidden;
+            position: relative;
+
+            .person-photo-overlay {
+                width: 100%;
+                height: 100%;
+                background-image: url(img/person-overlay.png);
+                position: absolute;
+                left: -1px;
+                top: -2px;
+                
+            }
+
+            p {
+                text-align: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            a {
+                text-align: center;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+        }
+    }
+
+    .ppc1 {
+        background-image: url(img/first-person.png);
+    }
+
+    .ppc2 {
+        background-image: url(img/second-person.png);
+    }
+
+    .ppc3 {
+        background-image: url(img/three-person.png);
+    }
+
+    .person-photo-overlay {
+        /*background-position: left center;
+        background-image: url(img/person-dotted-bg.png);
+        float: left;*/
+    }
+
+    .person-dotted-bg {
+        background-position: right center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(img/person-dotted-bg.png);
+        float: left;
+        height: 200px;
+        width: 36%;
+        position: relative;
+    }
+}
+
+#three-person-container {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    .person-line {
+        position: absolute;
+        bottom: 119px;
+        height: 1px;
+        background-color: #afbbc3;
+        z-index: 10;
+        margin-left: 18.5%;
+        width: 77%;
+        display: none;
+    }
+}
+
+
+#two-person-container {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+﻿CKEDITOR.plugins.setLang('youtube', 'pt', {
+	button : 'Inserir VГ­deo do Youtube',
+	title : 'Inserir VГ­deo do Youtube',
+	txtEmbed : 'Cole aqui o cГіdigo embed de um vГ­deo do Youtube',
+	txtUrl : 'Cole aqui uma URL de um vГ­deo do Youtube',
+	txtWidth : 'Largura',
+	txtHeight : 'Altura',
+	chkRelated : 'Mostrar vГ­deos sugeridos ao final do vГ­deo',
+	txtStartAt : 'Iniciar em (ss ou mm:ss ou hh:mm:ss)',
+	chkPrivacy : 'Ativar o modo de privacidade aprimorada',
+	chkOlderCode : 'Usar cГіdigo de incorporaГ§ГЈo antigo',
+	noCode : 'VocГЄ precisa informar um cГіdigo embed ou uma URL',
+	invalidEmbed : 'O cГіdigo informado nГЈo parece ser vГЎlido',
+	invalidUrl : 'A URL informada nГЈo parece ser vГЎlida',
+	or : 'ou',
+	noWidth : 'VocГЄ deve informar a largura do vГ­deo',
+	invalidWidth : 'Informe uma largura vГЎlida',
+	noHeight : 'VocГЄ deve informar a altura do vГ­deo',
+	invalidHeight : 'Informe uma altura vГЎlida',
+	invalidTime : 'O tempo informado Г© invГЎlido'
+});

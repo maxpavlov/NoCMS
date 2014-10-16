@@ -1,0 +1,58 @@
+﻿@using System.Globalization
+@using System.Threading
+@using ClientDependency.Core.Mvc
+@using Microsoft.Ajax.Utilities
+@{
+    var link = Thread.CurrentThread.CurrentCulture.ToString().ToLower() + "/"  + HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+}
+<div id="breadcrumbs">
+    <div class="left-circle">
+    </div>
+    <div class="left-second-circle">
+    </div>
+    <div class="left-three-circle">
+    </div>
+    <div class="first-text">
+        @if (HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+        {
+            <a href="@Url.Action("Index", "Home")">H</a>
+        }
+    </div>
+    <div class="line"></div>
+    <div class="current-controller">
+        @if (HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() != "home")
+        {
+            <a href="/@link/">
+                @HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().FirstOrDefault()
+            </a>
+        }
+        else
+        {
+            <a href="@Url.Action("Index", "Home")">H</a>
+        }
+    </div>
+    <div class="current-controller" style="position: absolute; margin-left: -52px;"></div>
+    <div class="first-text" style="margin-left: 17px;">
+        @if (HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "store" ||
+          HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "content")
+        {
+            if (HttpContext.Current.Request.RequestContext.RouteData.Values["itemId"] != null)
+            {
+                <a id="breadcrumbs-id" href="#">@HttpContext.Current.Request.RequestContext.RouteData.Values["itemId"].ToString().FirstOrDefault()        </a>
+            }
+            else
+            {
+                <a id="breadcrumbs-id" href="#"> </a>
+            }
+
+        }
+        else
+        {
+            <a id="breadcrumbs-id" href="#"> </a>
+        }
+
+    </div>
+    <div class="decor-circle"></div>
+    <div class="decor-circle" style="position: absolute; margin-left: -32px; margin-top: 15px;"></div>
+    <div class="left-three-circle" style="margin-left: 10px;"></div>
+</div>
